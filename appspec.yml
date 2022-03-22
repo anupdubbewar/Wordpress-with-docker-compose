@@ -11,6 +11,6 @@ hooks:
        runas: ec2-user
    ApplicationStart:
      - location: scripts/docker-compse-up.sh
-       timeout: 20
+       timeout: 3600
        runas: ec2-user
       
