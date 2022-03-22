@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+hooks:
+   BeforeInstall:
+     - location: scripts/pull-latest-code.sh
+       timeout: 20
+       runas: ec2-user
+   ApplicationStop:
+     - location: scripts/docker-compose-down.sh
+       timeout: 20
+       runas: ec2-user
+   ApplicationStart:
+     - location: scripts/docker-compse-up.sh
+       timeout: 20
+       runas: ec2-user
+      
